@@ -11,7 +11,7 @@ fastqc &
 Load F1 and R1 datasets into GUI interface. 
 Take screenshots of output files:
 ![F1screenshot.png](/data/forward_paired.png)
-
+![R1screenshot.png](/data/reverse_paired.png)
 ## 2. Ran trimmomatic
 ```bash
 java -jar...
