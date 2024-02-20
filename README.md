@@ -9,8 +9,10 @@ cd MyGenome
 fastqc &
 ```
 Load F1 and R1 datasets into GUI interface. 
-Take screenshots of output files:
+Take screenshots of output files
+Forward Paired:
 ![F1screenshot.png](/data/forward_paired.png)
+Reverse Paired:
 ![R1screenshot.png](/data/reverse_paired.png)
 ## 2. Ran trimmomatic
 ```bash
