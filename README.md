@@ -16,7 +16,7 @@ Reverse Paired:
 ![R1screenshot.png](/data/reverse_paired.png)
 ## 2. Ran trimmomatic
 ```bash
-java -jar...
+java -jar ./trimmomatic-0.38.jar PE -threads 16 -phred33 -trimlog file.txt UFVPY166_1.fq UFVPY166_2.fq UFVPY166_1_paired.fastq UFVPY166_1unpaired.fastq UFVPY166_2_paired.fastq UFVPY166_2_unpaired.fastq ILLUMINACLIP:adaptors.fasta:2:30:10 SLIDINGWINDOW:20:20 MINLEN:100
 ```
 
 ## 3. Count the number of forward reads remaining
