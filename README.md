@@ -34,5 +34,6 @@ Gave hash value of 111, so ran
 ```bash
 sbatch velvetoptimiser_noclean.sh UFVPY166 101 121 2
 ```
+Gave has value of 107
 
 
