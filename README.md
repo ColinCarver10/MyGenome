@@ -25,3 +25,14 @@ grep -c @A00261 forward_paired.fastq
 awk 'NR%4==2 {total += length($0)} END {print total}' forward_paired.fastq 
 awk 'NR%4==2 {total += length($0)} END {print total}' reverse_paired.fastq 
 ```
+
+On MCC ran
+```bash
+sbatch velvetoptimiser_noclean.sh UFVPY166 61 131 10
+```
+Gave hash value of 111, so ran
+```bash
+sbatch velvetoptimiser_noclean.sh UFVPY166 101 121 2
+```
+
+
