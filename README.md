@@ -36,4 +36,13 @@ sbatch velvetoptimiser_noclean.sh UFVPY166 101 121 2
 ```
 Gave has value of 107
 
+Renamed the sequence headers using
+```bash
+perl /project/farman_s24cs485g/SCRIPTS/SimpleFastaHeaders.pl UFVPY166.fasta UFVPY166
+```
 
+
+Then ran
+```bash
+sbatch /project/farman_s24cs485g/SLURM_SCRIPTS/BuscoSingularity.sh UFVPY166_nh.fasta
+```
