@@ -46,3 +46,28 @@ Then ran
 ```bash
 sbatch /project/farman_s24cs485g/SLURM_SCRIPTS/BuscoSingularity.sh UFVPY166_nh.fasta
 ```
+
+## Removed Contigs shorter than 200 base pairs long
+```bash
+perl CullShortContigs.pl UFVPY166_nh.fasta
+```
+
+## Run blast against the MoMitochondrion file.
+```bash
+blastn -query MoMitochondrion.fasta -subject UFVPY166_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' -out MoMitochondrion.UFVPY166.BLAST
+```
+
+## Save output to .csv file
+```bash
+awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' MoMitochondrion.UFVPY166.BLAST > UFVPY166_mitochondrion.csv
+```
+
+## Blast against B71v2sh_masked
+```bash
+blastn -query B71v2sh_masked.fasta -subject UFVPY166_Final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.UFVPY166.BLAST
+```
+
+## Identify variants
+```bash
+sbatch CallVariants.sh UFVPY166_BLASTS
+```
