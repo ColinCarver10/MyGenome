@@ -71,3 +71,18 @@ blastn -query B71v2sh_masked.fasta -subject UFVPY166_Final.fasta -evalue 1e-50 -
 ```bash
 sbatch CallVariants.sh UFVPY166_BLASTS
 ```
+
+## Run Snap
+```bash
+snap-hmm Moryzae.hmm UFVPY166_final.fastaa UFVPY166-snap.zff
+```
+
+## Run Augustus
+```bash
+augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/UFVPY166_final.fasta > UFVPY166-augustus.gff3
+```
+
+## Run Maker
+```bash
+maker 2>&1 | tee maker.log
+```
