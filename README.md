@@ -92,7 +92,7 @@ maker 2>&1 | tee maker.log
 gff3_merge -d UFVPY166_final.maker.output/UFVPY166_final_master_datastore_index.log -o UFVPY166-annotations.gff
 ```
 
-## Count number of unique genes: Results in 7740 genes.
+## Count number of unique genes: Results in 12,750 genes.
 ```bash
-grep 'UFVPY166_contig' UFVPY166-annotations.gff | awk '{split($1,a," "); print a[1]}' | uniq -c | wc -l
+grep 'UFVPY166_contig' UFVPY166-annotations.gff | awk '{print $3}' | grep 'gene' | wc -l
 ```
