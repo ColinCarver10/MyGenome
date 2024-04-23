@@ -105,4 +105,4 @@ grep 'UFVPY166_contig' UFVPY166-annotations.gff | awk '{print $3}' | grep 'gene'
 ```
 
 ## Maker output file
-![UFVPY166-genes.fasta.all.maker.proteins.fasta](data/UFVPY166-genes.fasta.all.maker.proteins.fasta)
+[UFVPY166-genes.fasta.all.maker.proteins.fasta](data/UFVPY166-genes.fasta.all.maker.proteins.fasta)
