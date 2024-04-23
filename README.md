@@ -46,6 +46,7 @@ Then ran
 ```bash
 sbatch /project/farman_s24cs485g/SLURM_SCRIPTS/BuscoSingularity.sh UFVPY166_nh.fasta
 ```
+*File is too large to upload.
 
 ## Removed Contigs shorter than 200 base pairs long
 ```bash
@@ -56,6 +57,7 @@ perl CullShortContigs.pl UFVPY166_nh.fasta
 ```bash
 blastn -query MoMitochondrion.fasta -subject UFVPY166_nh.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid slen length qstart qend sstart send btop' -out MoMitochondrion.UFVPY166.BLAST
 ```
+[MoMitochondrion.UFVPY166.BLAST](/data/MoMitochondrion.UFVPY166.BLAST)
 
 ## Save output to .csv file
 ```bash
