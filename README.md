@@ -34,7 +34,7 @@ Gave hash value of 111, so ran
 ```bash
 sbatch velvetoptimiser_noclean.sh UFVPY166 101 121 2
 ```
-Gave has value of 107
+Gave hash value of 107
 
 Renamed the sequence headers using
 ```bash
