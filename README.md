@@ -63,11 +63,13 @@ blastn -query MoMitochondrion.fasta -subject UFVPY166_nh.fasta -evalue 1e-50 -ma
 ```bash
 awk '$4/$3 > 0.9 {print $2 ",mitochondrion"}' MoMitochondrion.UFVPY166.BLAST > UFVPY166_mitochondrion.csv
 ```
+[UFVPY166_mitochondrion.csv](/data/UFVPY166_mitochondrion.csv)
 
 ## Blast against B71v2sh_masked
 ```bash
 blastn -query B71v2sh_masked.fasta -subject UFVPY166_Final.fasta -evalue 1e-50 -max_target_seqs 20000 -outfmt '6 qseqid sseqid qstart qend sstart send btop' -out B71v2sh.UFVPY166.BLAST
 ```
+[B71v2sh.UFVPY166.BLAST](/data/B71v2sh.UFVPY166.BLAST)
 
 ## Identify variants
 ```bash
@@ -78,11 +80,13 @@ sbatch CallVariants.sh UFVPY166_BLASTS
 ```bash
 snap-hmm Moryzae.hmm UFVPY166_final.fastaa UFVPY166-snap.zff
 ```
+[UFVPY166-snap.zff](data/UFVPY166-snap.zff)
 
 ## Run Augustus
 ```bash
 augustus --species=magnaporthe_grisea --gff3=on --singlestrand=true --progress=true ../snap/UFVPY166_final.fasta > UFVPY166-augustus.gff3
 ```
+* File too large to upload.
 
 ## Run Maker
 ```bash
@@ -93,8 +97,12 @@ maker 2>&1 | tee maker.log
 ```bash
 gff3_merge -d UFVPY166_final.maker.output/UFVPY166_final_master_datastore_index.log -o UFVPY166-annotations.gff
 ```
+* File too large to upload.
 
 ## Count number of unique genes: Results in 12,750 genes.
 ```bash
 grep 'UFVPY166_contig' UFVPY166-annotations.gff | awk '{print $3}' | grep 'gene' | wc -l
 ```
+
+## Maker output file
+[UFVPY166-genes.fasta.all.maker.proteins.fasta](data/UFVPY166-genes.fasta.all.maker.proteins.fasta)
